@@ -1,0 +1,228 @@
+ body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(-45deg, #667eea, #764ba2, #6ee7b7, #f472b6);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #fff;
+    padding: 30px;
+    margin: 0;
+  }
+
+  @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  #app {
+    max-width: 700px;
+    margin: auto;
+    background: rgba(45, 45, 58, 0.95);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #ffffff;
+  }
+
+  .form input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+  }
+
+  .form button {
+    width: 100%;
+    padding: 12px;
+    background: #4ade80;
+    border: none;
+    border-radius: 6px;
+    color: #000;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .form button:hover {
+    background: #22c55e;
+  }
+
+  .playlist {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+
+  .playlist li {
+    background: #3f3f4e;
+    margin-bottom: 25px;
+    padding: 20px 25px;
+    border-radius: 15px;
+    transition: transform 0.3s ease, background 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+
+  .playlist li:hover {
+    transform: translateY(-5px);
+    background: #4b5563;
+  }
+
+  .playlist li.favorite {
+    background: #fde047;
+    color: #000;
+  }
+
+  .song-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .song-title {
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .song-title::before {
+    content: '\1F3B5'; /* 🎵 */
+  }
+
+  .song-artist {
+    font-size: 14px;
+    opacity: 0.8;
+  }
+
+  .controls {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .controls button {
+    background: #6366f1;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: background 0.3s;
+  }
+
+  .controls button:hover {
+    background: #4f46e5;
+  }
+
+  .form-inline {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.form-inline input {
+  flex: 1 1 20%;
+  min-width: 150px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #f3f4f6;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-inline input::placeholder {
+  color: #888;
+}
+
+.form-inline input:focus {
+  outline: none;
+  background-color: #fff;
+  box-shadow: 0 0 0 2px #a78bfa;
+}
+
+.form-inline button {
+  padding: 12px 20px;
+  font-size: 14px;
+  border-radius: 8px;
+  background: linear-gradient(to right, #4ade80, #22c55e);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+}
+
+.form-inline button:hover {
+  background: linear-gradient(to right, #22c55e, #15803d);
+}
+
+/* Container for buttons inside each playlist item */
+.playlist li > div:last-child {
+  display: flex;
+  gap: 8px;
+}
+
+/* Common button style */
+.playlist li button {
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Play Button - Green */
+.playlist li button:nth-child(1) {
+  background: linear-gradient(to right, #4ade80, #22c55e);
+  color: #fff;
+}
+
+.playlist li button:nth-child(1):hover {
+  background: linear-gradient(to right, #22c55e, #15803d);
+}
+
+/* Favorite Button - Yellow */
+.playlist li button:nth-child(2) {
+  background: linear-gradient(to right, #fde68a, #facc15);
+  color: #000;
+}
+
+.playlist li button:nth-child(2):hover {
+  background: linear-gradient(to right, #facc15, #ca8a04);
+  color: #000;
+}
+
+/* Delete Button - Red */
+.playlist li button:nth-child(3) {
+  background: linear-gradient(to right, #f87171, #ef4444);
+  color: #fff;
+}
+
+.playlist li button:nth-child(3):hover {
+  background: linear-gradient(to right, #ef4444, #b91c1c);
+}
