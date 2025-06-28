@@ -1,7 +1,6 @@
 # Music App
 
-### Youtube series Link
-[Click here to watch](https://www.youtube.com/watch?v=qWtLLGJC3pI&list=PLDc9bt_00KcLqwN9Fm0qEDE3P7yeYnNC8).
+### Youtube series Link [Click here to watch](https://www.youtube.com/watch?v=qWtLLGJC3pI&list=PLDc9bt_00KcLqwN9Fm0qEDE3P7yeYnNC8).
 
 ## Project setup
 ```

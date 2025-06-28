@@ -10,7 +10,20 @@
             <button @click="saveSong">➕ Add Song</button>
         </div>
 
-        <ul id="playlist" class="playlist"></ul>
+        <ul id="playlist" class="playlist">
+            <li v-for="(song, index) in songs" :key="index">
+                <div class="item">
+                    <strong>{{ song.title }}</strong> by {{  song.artist }}
+                </div>
+
+                <div>
+                    <button>Play</button>
+                    <button>Pause</button>
+                    <button>Favorite</button>
+                    <button>Remove</button>
+                </div>
+            </li>
+        </ul>
 
     </div>
 </template>
@@ -59,5 +72,7 @@ export default {
 </script>
 
 <style scoped>
-
+.item {
+    color: white;
+}
 </style>    
