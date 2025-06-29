@@ -17,10 +17,11 @@
                 </div>
 
                 <div>
-                    <button>Play</button>
-                    <button>Pause</button>
-                    <button>Favorite</button>
-                    <button>Remove</button>
+                    <button @click="playSong(song.audio)">Play</button>
+                   
+                    <button @click="toggleFavourite(index)">{{ song.favourite ? '💔 Unfavorite' : '❤️ Favorite' }}</button>
+                    <button @click="removeSong(index)">Remove</button>
+                     <button @click="pauseSong()">Pause</button>
                 </div>
             </li>
         </ul>
@@ -37,6 +38,8 @@ export default {
             title: '',
             artist: '',
             audio: '',
+            favourite: false,
+            currentSong: null,
             
             songs: []
 
@@ -44,6 +47,7 @@ export default {
     },
 
     methods: {
+        
         saveSong() {
 
             if (this.title == '' || this.artist == '' || this.audio == '') {
@@ -54,11 +58,35 @@ export default {
             this.songs.push({
                 title: this.title, 
                 artist: this.artist,
-                audio: this.audio  
+                audio: this.audio,  
+                favourite: this.favourite
             });   
 
             this.clearForm();
 
+        },
+
+        removeSong(index) {
+            this.songs.splice(index, 1);
+        },
+
+        toggleFavourite(index) {
+            this.songs[index].favourite = !this.songs[index].favourite;
+        },
+
+        playSong(audioUrl) {
+            const audio = new Audio(audioUrl);
+            this.currentSong = audio;
+            audio.play();
+        },
+
+        pauseSong() {
+            if (this.currentSong) {
+                this.currentSong.pause();
+            }
+            else {
+                alert('No song is currently playing');
+            }
         },
 
         clearForm() {
